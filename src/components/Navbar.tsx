@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import profileImg from '../assets/images/profile.jpg';
+import profileImg from '../assets/images/profile.png';
 import clsx from 'clsx';
 
 export default function Navbar() {
