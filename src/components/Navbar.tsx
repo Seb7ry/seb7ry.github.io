@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import profileImg from '../assets/images/profile.jpg';
 import clsx from 'clsx';
 
 export default function Navbar() {
@@ -26,7 +27,7 @@ export default function Navbar() {
         {/* Perfil con imagen, nombre y cargo */}
         <div className="flex items-center space-x-3">
           <img
-            src="src/assets/images/profile.jpg"
+            src={profileImg}
             alt="Foto de perfil"
             className="w-10 h-10 rounded-full object-cover"
           />
