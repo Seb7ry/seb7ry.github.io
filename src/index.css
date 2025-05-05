@@ -7,5 +7,6 @@ body, html, #root {
   padding: 0;
   height: 100%;
   background: #1B1D2A;
+  overflow-x: hidden;
   @apply font-manrope;
 }

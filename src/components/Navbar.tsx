@@ -20,15 +20,15 @@ export default function Navbar() {
       {/* Overlay semitransparente con blur para el fondo */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-30 bg-black/30 backdrop-blur-sm md:hidden" 
+          className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm md:hidden" 
           onClick={() => setIsOpen(false)}
         />
       )}
 
       <nav
         className={clsx(
-          'fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-all duration-300',
-          scrolled ? 'bg-[#1B1D2A]/90 shadow-lg' : 'bg-[#1B1D2A]/80'
+          'fixed top-0 left-0 w-full z-50 backdrop-blur-sm transition-all duration-300',
+          scrolled ? 'bg-[#1B1D2A]/40 shadow-lg' : 'bg-[#1B1D2A]/40'
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -74,8 +74,8 @@ export default function Navbar() {
         {/* Menú hamburguesa desplegable */}
         <div
           className={clsx(
-            'md:hidden absolute top-16 left-0 w-full z-40 overflow-hidden transition-all duration-300',
-            'bg-[#1B1D2A]/95', // Fondo más opaco para mejor legibilidad
+            'md:hidden absolute  left-0 w-full z-40 overflow-hidden transition-all duration-300',
+            'bg-[#1B1D2A]/40',
             isOpen ? 'max-h-96 py-4' : 'max-h-0 py-0'
           )}
         >
