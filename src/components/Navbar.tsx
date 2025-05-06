@@ -46,11 +46,13 @@ export default function Navbar() {
           </div>
 
           {/* Menú en pantalla grande */}
-          <div className="hidden md:flex space-x-8 text-[#F4D49B]">
-            <a href="#inicio" className="hover:text-[#F6C871]">Inicio</a>
+          <div className="hidden md:flex space-x-8 text-[#F4D49B] opacity-80">
+            <a href="#inicio" className="hover:text-[#F6C871] ">Inicio</a>
             <a href="#sobremi" className="hover:text-[#F6C871]">Sobre mí</a>
+            <a href="#experiencia" className="hover:text-[#F6C871]">Experiencia</a>
             <a href="#proyectos" className="hover:text-[#F6C871]">Proyectos</a>
-            <a href="#contacto" className="hover:text-[#F6C871]">Contacto</a>
+            <a href="#certificaciones" className="hover:text-[#F6C871]">Certificaciones</a>
+            <a href="#contacto" className="hover:text-[#F6C871] ">Contacto</a>
           </div>
 
           {/* Botón hamburguesa para mobile */}
@@ -79,7 +81,7 @@ export default function Navbar() {
             isOpen ? 'max-h-96 py-4' : 'max-h-0 py-0'
           )}
         >
-          <div className="px-4 space-y-3 text-[#F4D49B]">
+          <div className="px-4 space-y-3 text-[#F4D49B] opacity-80">
             <a 
               href="#inicio" 
               className="block py-2 hover:text-[#F6C871] transition-colors"
@@ -95,11 +97,25 @@ export default function Navbar() {
               Sobre mí
             </a>
             <a 
+              href="#experiencia" 
+              className="block py-2 hover:text-[#F6C871] transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Experiencia
+            </a>
+            <a 
               href="#proyectos" 
               className="block py-2 hover:text-[#F6C871] transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Proyectos
+            </a>
+            <a 
+              href="#certificaciones" 
+              className="block py-2 hover:text-[#F6C871] transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Certificaciones
             </a>
             <a 
               href="#contacto" 

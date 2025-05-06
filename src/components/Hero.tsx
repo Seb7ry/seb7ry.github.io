@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaNodeJs, FaReact } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaNodeJs, FaReact, FaJava, FaGitAlt } from 'react-icons/fa';
 import { HiOutlineDocumentArrowDown } from 'react-icons/hi2';
 import {
   SiJavascript,
@@ -7,19 +7,22 @@ import {
   SiNestjs,
   SiPostgresql,
   SiMongodb,
+  SiSpring,
+  SiDocker,
+  SiMysql,
 } from 'react-icons/si';
 
 export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative h-screen pt-16 flex flex-col justify-center items-center text-center px-4 text-white bg-[#1B1D2A] overflow-hidden"
+      className="relative pt-32 pb-24 px-4 text-white bg-[#1B1D2A] overflow-hidden"
     >
       {/* Fondo con gradiente horizontal centrado */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-r from-[#1B1D2A] via-[#2A2D42] to-[#1B1D2A]" />
 
       {/* Contenido */}
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto">
         <div className="flex space-x-4 mb-6 justify-center">
           <a
             href="/cv-sebastian.pdf"
@@ -35,7 +38,7 @@ export default function Hero() {
           Sebastián Murillo
         </h1>
         <h2 className="text-lg md:text-xl text-[#ffeac5] mb-6">
-          Desarrollador con enfoque en Backend
+          Desarrollador Backend con proyección Fullstack
         </h2>
 
         <div className="flex space-x-4 mb-6 justify-center">
@@ -43,7 +46,7 @@ export default function Hero() {
             href={import.meta.env.VITE_LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#4b7adf] hover:text-[#9D6B8B] text-xl"
+            className="text-[#4b7adf] hover:text-[#9D6B8B] text-2xl"
           >
             <FaLinkedin />
           </a>
@@ -51,13 +54,13 @@ export default function Hero() {
             href={import.meta.env.VITE_GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#F4D49B] hover:text-[#9D6B8B] text-xl"
+            className="text-[#F4D49B] hover:text-[#9D6B8B] text-2xl"
           >
             <FaGithub />
           </a>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 max-w-xl text-gray-300 text-sm">
+        <div className="flex flex-wrap justify-center gap-4 text-gray-300 text-sm max-w-2xl mx-auto">
           <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
             <SiJavascript className="text-yellow-400" /> JavaScript
           </span>
@@ -81,6 +84,21 @@ export default function Hero() {
           </span>
           <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
             <SiMongodb className="text-green-400" /> MongoDB
+          </span>
+          <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
+            <SiMysql className="text-[#00758F]" /> MySQL
+          </span>
+          <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
+            <FaJava className="text-[#f89820]" /> Java
+          </span>
+          <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
+            <SiSpring className="text-green-500" /> Spring Boot
+          </span>
+          <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
+            <SiDocker className="text-blue-400" /> Docker
+          </span>
+          <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
+            <FaGitAlt className="text-orange-400" /> Git
           </span>
         </div>
       </div>
