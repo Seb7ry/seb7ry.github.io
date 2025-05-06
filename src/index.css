@@ -10,3 +10,7 @@ body, html, #root {
   overflow-x: hidden;
   @apply font-manrope;
 }
+
+html {
+  scroll-behavior: smooth;
+}

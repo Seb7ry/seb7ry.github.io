@@ -11,23 +11,23 @@ export default function AboutMe() {
   return (
     <section
       id="sobremi"
-      className="relative w-full py-20 text-white overflow-hidden bg-[#4c2a4d]"
+      className="relative w-full py-24 text-white overflow-hidden bg-[#4c2a4d]"
     >
       {/* Fondo con gradiente horizontal centrado al estilo Hero */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-r from-[#4c2a4d] via-[#5e3a5f] to-[#392741]" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-start gap-12">
+      <div className="relative z-10 max-w-6xl mx-auto px-20 flex flex-col md:flex-row items-start gap-16">
         {/* Texto principal */}
         <div className="flex-1 text-left">
-          <h2 className="text-lg uppercase tracking-widest text-[#F6C871] mb-1">
+          <h2 className="text-2xl uppercase tracking-widest text-[#F6C871] mb-1">
             Conóceme
           </h2>
-          <h4 className="text-lg md:text-4xl font-bold mb-6 text-[#ffeac5]">
+          <p className="italic text-sm text-white/70 mb-6">
             Pasión por el desarrollo y el aprendizaje constante
-          </h4>
+          </p>
 
           <p className="text-base md:text-lg leading-relaxed mb-4 text-white/90">
-            Soy estudiante de Ingeniería de Sistemas en la <strong className="text-[#F6C871]">Universidad de Ibagué</strong>, actualmente en el <strong className="text-[#F6C871]">décimo semestre</strong>. 
+            Soy estudiante de Ingeniería de Sistemas en la <strong className="text-[#F6C871]">Universidad de Ibagué</strong>, actualmente en el <strong className="text-[#F6C871]">décimo semestre</strong>.
             Me especializo en desarrollo <strong className="text-[#F6C871]">backend con Spring Boot</strong> y estoy fortaleciendo mis habilidades en <strong className="text-[#F6C871]">Frontend con React</strong> y <strong className="text-[#F6C871]">tecnologías cloud como AWS</strong>.
           </p>
           <p className="text-base md:text-lg leading-relaxed text-white/90">
@@ -36,10 +36,10 @@ export default function AboutMe() {
         </div>
 
         {/* Habilidades blandas */}
-        <div className="flex-1">
-          <h2 className="text-2xl font-semibold mb-6 text-[#ffeac5] text-left">
+        <div className="flex-1 mt-6 md:mt-16">
+          <h3 className="text-2xl font-semibold mb-6 text-[#ffeac5] text-left">
             Habilidades blandas
-          </h2>
+          </h3>
           <div className="flex flex-wrap justify-start gap-4 text-sm">
             {[
               { icon: <FaComments />, label: 'Comunicación asertiva' },

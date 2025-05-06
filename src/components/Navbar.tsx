@@ -2,25 +2,62 @@ import { useEffect, useState } from 'react';
 import profileImg from '../assets/images/profile.png';
 import clsx from 'clsx';
 
+const SECTIONS = ['inicio', 'sobremi', 'experiencia', 'proyectos', 'certificaciones', 'contacto'];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('inicio');
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.4, // Más sensible que 0.1
+        rootMargin: '-60px 0px -40% 0px', // Considera altura del navbar
+      }
+    );
+  
+    SECTIONS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  
+    return () => observer.disconnect();
+  }, []);
+  
+
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsOpen(false);
+    }
+  };
+
+  const getLinkClass = (id: string) =>
+    clsx(
+      'hover:text-[#F6C871] cursor-pointer',
+      activeSection === id ? 'text-[#F6C871] font-semibold' : 'text-[#F4D49B] opacity-80'
+    );
+
   return (
     <>
-      {/* Overlay semitransparente con blur para el fondo */}
       {isOpen && (
-        <div 
-          className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm md:hidden" 
+        <div
+          className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm md:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}
@@ -32,7 +69,7 @@ export default function Navbar() {
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          {/* Perfil con imagen, nombre y cargo */}
+          {/* Perfil */}
           <div className="flex items-center space-x-3">
             <img
               src={profileImg}
@@ -45,20 +82,23 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Menú en pantalla grande */}
-          <div className="hidden md:flex space-x-8 text-[#F4D49B] opacity-80">
-            <a href="#inicio" className="hover:text-[#F6C871] ">Inicio</a>
-            <a href="#sobremi" className="hover:text-[#F6C871]">Sobre mí</a>
-            <a href="#experiencia" className="hover:text-[#F6C871]">Experiencia</a>
-            <a href="#proyectos" className="hover:text-[#F6C871]">Proyectos</a>
-            <a href="#certificaciones" className="hover:text-[#F6C871]">Certificaciones</a>
-            <a href="#contacto" className="hover:text-[#F6C871] ">Contacto</a>
+          {/* Menú en escritorio */}
+          <div className="hidden md:flex space-x-8">
+            {SECTIONS.map((id) => (
+              <span
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className={getLinkClass(id)}
+              >
+                {id === 'sobremi' ? 'Sobre mí' : id.charAt(0).toUpperCase() + id.slice(1)}
+              </span>
+            ))}
           </div>
 
-          {/* Botón hamburguesa para mobile */}
+          {/* Botón hamburguesa */}
           <div className="md:hidden">
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
+            <button
+              onClick={() => setIsOpen(!isOpen)}
               className="focus:outline-none text-[#F4D49B]"
               aria-label="Toggle menu"
             >
@@ -73,57 +113,28 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Menú hamburguesa desplegable */}
+        {/* Menú móvil */}
         <div
           className={clsx(
-            'md:hidden absolute  left-0 w-full z-40 overflow-hidden transition-all duration-300',
+            'md:hidden absolute left-0 w-full z-40 overflow-hidden transition-all duration-300',
             'bg-[#1B1D2A]/40',
             isOpen ? 'max-h-96 py-4' : 'max-h-0 py-0'
           )}
         >
-          <div className="px-4 space-y-3 text-[#F4D49B] opacity-80">
-            <a 
-              href="#inicio" 
-              className="block py-2 hover:text-[#F6C871] transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Inicio
-            </a>
-            <a 
-              href="#sobremi" 
-              className="block py-2 hover:text-[#F6C871] transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Sobre mí
-            </a>
-            <a 
-              href="#experiencia" 
-              className="block py-2 hover:text-[#F6C871] transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Experiencia
-            </a>
-            <a 
-              href="#proyectos" 
-              className="block py-2 hover:text-[#F6C871] transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Proyectos
-            </a>
-            <a 
-              href="#certificaciones" 
-              className="block py-2 hover:text-[#F6C871] transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Certificaciones
-            </a>
-            <a 
-              href="#contacto" 
-              className="block py-2 hover:text-[#F6C871] transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Contacto
-            </a>
+          <div className="px-4 space-y-3">
+            {SECTIONS.map((id) => (
+              <span
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className={clsx(
+                  'block py-2 transition-colors cursor-pointer',
+                  activeSection === id ? 'text-[#F6C871]' : 'text-[#F4D49B] opacity-80',
+                  'hover:text-[#F6C871]'
+                )}
+              >
+                {id === 'sobremi' ? 'Sobre mí' : id.charAt(0).toUpperCase() + id.slice(1)}
+              </span>
+            ))}
           </div>
         </div>
       </nav>
