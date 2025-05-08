@@ -11,16 +11,16 @@ export default function AboutMe() {
   return (
     <section
       id="sobremi"
-      className="relative w-full py-24 text-white overflow-hidden bg-[#4c2a4d]"
+      className="relative w-full py-20 text-white overflow-hidden bg-[#4c2a4d]"
     >
       {/* Fondo con gradiente horizontal centrado al estilo Hero */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-r from-[#4c2a4d] via-[#5e3a5f] to-[#392741]" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-20 flex flex-col md:flex-row items-start gap-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-40 flex flex-col md:flex-row items-start gap-16">
         {/* Texto principal */}
         <div className="flex-1 text-left">
           <h2 className="text-2xl uppercase tracking-widest text-[#F6C871] mb-1">
-            Conóceme
+            Sobre mí
           </h2>
           <p className="italic text-sm text-white/70 mb-6">
             Pasión por el desarrollo y el aprendizaje constante
