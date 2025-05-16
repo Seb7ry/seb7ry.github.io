@@ -13,10 +13,10 @@ export default function AboutMe() {
       id="sobremi"
       className="relative w-full py-20 text-white overflow-hidden bg-[#4c2a4d]"
     >
-      {/* Fondo con gradiente horizontal centrado al estilo Hero */}
+      {/* Fondo con gradiente horizontal */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-r from-[#4c2a4d] via-[#5e3a5f] to-[#392741]" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-40 flex flex-col md:flex-row items-start gap-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 md:px-12 lg:px-40 flex flex-col md:flex-row items-start gap-12">
         {/* Texto principal */}
         <div className="flex-1 text-left">
           <h2 className="text-2xl uppercase tracking-widest text-[#F6C871] mb-1">
@@ -36,11 +36,11 @@ export default function AboutMe() {
         </div>
 
         {/* Habilidades blandas */}
-        <div className="flex-1 mt-6 md:mt-16">
-          <h3 className="text-2xl font-semibold mb-6 text-[#ffeac5] text-left">
+        <div className="flex-1 mt-8 md:mt-16 flex flex-col items-center md:items-start text-center md:text-left">
+          <h3 className="text-2xl font-semibold mb-6 text-[#ffeac5]">
             Habilidades blandas
           </h3>
-          <div className="flex flex-wrap justify-start gap-4 text-sm">
+          <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm">
             {[
               { icon: <FaComments />, label: 'Comunicación asertiva' },
               { icon: <FaUsers />, label: 'Trabajo en equipo' },

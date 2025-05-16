@@ -13,3 +13,12 @@ body, html, #root {
 html {
   scroll-behavior: smooth;
 }
+
+/* globals.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
