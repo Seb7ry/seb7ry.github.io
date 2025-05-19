@@ -25,7 +25,7 @@ export default function Navbar() {
         });
       },
       {
-        threshold: 0.4, // Más sensible que 0.1
+        threshold: 0.1, // Más sensible que 0.1
         rootMargin: '-60px 0px -40% 0px', // Considera altura del navbar
       }
     );

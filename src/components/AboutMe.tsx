@@ -19,7 +19,7 @@ export default function AboutMe() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 md:px-12 lg:px-40 flex flex-col md:flex-row items-start gap-12">
         {/* Texto principal */}
         <div className="flex-1 text-left">
-          <h2 className="text-2xl uppercase tracking-widest text-[#F6C871] mb-1">
+         <h2 className="text-2xl uppercase tracking-widest text-[#F6C871] mb-2 text-left md:text-left">
             Sobre mí
           </h2>
           <p className="italic text-sm text-white/70 mb-6">
