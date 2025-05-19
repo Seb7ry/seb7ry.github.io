@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaNodeJs, FaReact, FaJava, FaGitAlt } from 'react-icons/fa';
+import { FaFlutter } from 'react-icons/fa6';
 import { HiOutlineDocumentArrowDown } from 'react-icons/hi2';
 import {
   SiJavascript,
@@ -93,6 +94,9 @@ export default function Hero() {
           </span>
           <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
             <SiSpring className="text-green-500" /> Spring Boot
+          </span>
+          <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
+            <FaFlutter className="text-sky-400" /> Flutter
           </span>
           <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
             <SiDocker className="text-blue-400" /> Docker
