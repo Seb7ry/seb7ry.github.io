@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaNodeJs, FaReact, FaJava, FaGitAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaNodeJs, FaReact, FaJava, FaGitAlt, FaWhatsapp } from 'react-icons/fa';
 import { FaFlutter } from 'react-icons/fa6';
 import { HiOutlineDocumentArrowDown } from 'react-icons/hi2';
 import {
@@ -26,9 +26,9 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto">
         <div className="flex space-x-4 mb-6 justify-center">
           <a
-            href="/cv-sebastian.pdf"
+            href="/assets/document/CV_SebastianMurillo.pdf"
             download
-            className="flex items-center gap-2 border border-[#F6C871] text-[#F4D49B] px-5 py-2 rounded-md text-sm transition duration-300 hover:bg-[#9D6B8B] hover:border-[#F4D49B] hover:text-white"
+            className="flex items-center gap-2 border border-[#F6C871] text-[#F4D49B] px-5 py-2 rounded-md text-sm transition duration-300 hover:bg-[#ffc25086] hover:border-[#F4D49B] hover:text-white"
           >
             <HiOutlineDocumentArrowDown className="text-sm" />
             Descargar CV
@@ -38,16 +38,23 @@ export default function Hero() {
         <h1 className="text-3xl md:text-5xl text-[#F6C871] font-semibold mb-2">
           Sebastián Murillo
         </h1>
-        <h2 className="text-lg md:text-xl text-[#ffeac5] mb-6">
+        <h2 className="text-lg md:text-xl text-[#ffeac5] mb-1">
           Desarrollador Backend con proyección Fullstack
         </h2>
+        <a
+          href="mailto:sebastian.tucorreo@email.com"
+          title="Enviar correo"
+          className="text-sm text-white/60 hover:text-[#F6C871] transition-colors duration-300 mb-6"
+        >
+          sebasty06@outlook.com
+        </a>
 
         <div className="flex space-x-4 mb-6 justify-center">
           <a
             href={import.meta.env.VITE_LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#4b7adf] hover:text-[#9D6B8B] text-2xl"
+            className="text-[#4b7adf] hover:text-[#6d95e062] transition-colors duration-300 text-2xl"
           >
             <FaLinkedin />
           </a>
@@ -55,9 +62,17 @@ export default function Hero() {
             href={import.meta.env.VITE_GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#F4D49B] hover:text-[#9D6B8B] text-2xl"
+            className="text-[#F4D49B] hover:text-[#f6e1b07e] transition-colors duration-300 text-2xl"
           >
             <FaGithub />
+          </a>
+          <a
+            href={import.meta.env.VITE_WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#25D366] hover:text-[#42e27d8e] transition-colors duration-300 text-2xl"
+          >
+            <FaWhatsapp />
           </a>
         </div>
 

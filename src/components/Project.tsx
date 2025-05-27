@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect, JSX } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaGitAlt, FaVuejs, FaJava } from 'react-icons/fa';
-import { FaFlutter } from 'react-icons/fa6';
-import { SiDocker, SiMongodb, SiNestjs, SiPostgresql, SiSpring } from 'react-icons/si';
+import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
+import { SiDocker, SiMongodb, SiNestjs, SiPostgresql } from 'react-icons/si';
 
 interface Technology {
   name: string;
@@ -29,7 +28,7 @@ const projects: Project[] = [
     title: 'Sistema de Gestión de Facturación Médica',
     description:
       'Admisiones médicas con firma digital de pacientes y generación automática de comprobantes enlazados a facturas. Reduce el uso de papel en el Hospital San Juan Bautista.',
-    screenshots: ['/images/fact-desk.png'],
+    screenshots: ['/assets/images/fact-desk.png'],
     frontendUrl: 'https://github.com/Seb7ry/hosjuba-fact-interface',
     backendUrl: 'https://github.com/Seb7ry/hosjuba-fact-service',
     demoUrl: 'https://hosjuba-fact-interface.onrender.com/',
@@ -59,30 +58,6 @@ const projects: Project[] = [
       { name: 'Git', icon: <FaGitAlt className="text-orange-400" /> },
     ],
   },
-  {
-    title: 'Plataforma Integral de Gestión Documental',
-    description:
-      'Sistema distribuido con microservicios para gestionar documentos, usuarios y flujos de aprobación en instituciones públicas.',
-    screenshots: [''],
-    demoUrl: 'https://gestion-docs.onrender.com/',
-    frontendUrl: 'https://github.com/Seb7ry/gestion-docs-interface',
-    backendUrl: '',
-    technologies: [
-      { name: 'Vue.js', icon: <FaVuejs className="text-green-400" /> },
-      { name: 'Flutter', icon: <FaFlutter className="text-sky-400" /> },
-      { name: 'Node.js', icon: <FaNodeJs className="text-green-500" /> },
-      { name: 'Spring Boot', icon: <SiSpring className="text-green-500" /> },
-      { name: 'Java', icon: <FaJava className="text-[#f89820]" /> },
-      { name: 'MongoDB', icon: <SiMongodb className="text-green-400" /> },
-      { name: 'Docker', icon: <SiDocker className="text-blue-400" /> },
-      { name: 'Git', icon: <FaGitAlt className="text-orange-400" /> },
-    ],
-    microservices: [
-      { name: 'Servicio de Autenticación', url: 'https://github.com/Seb7ry/auth-service' },
-      { name: 'Servicio de Documentos', url: 'https://github.com/Seb7ry/documents-service' },
-      { name: 'Servicio de Notificaciones', url: 'https://github.com/Seb7ry/notifications-service' },
-    ],
-  },
 ];
 
 export default function Projects() {
@@ -98,7 +73,7 @@ export default function Projects() {
       const rect = ref.getBoundingClientRect();
       const spaceBelow = window.innerHeight - rect.bottom;
       const spaceAbove = rect.top;
-      setDropdownDirection(spaceBelow < 120 && spaceAbove > 120 ? 'up' : 'down');
+      setDropdownDirection(spaceBelow < 80 && spaceAbove > 80 ? 'up' : 'down');
       setDropdownVisible(dropdownVisible === idx ? null : idx);
     }
   };
@@ -121,10 +96,10 @@ export default function Projects() {
     <section id="proyectos" className="relative w-full py-24 text-white overflow-hidden bg-[#1B1D2A]">
       <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-r from-[#4c2a4d] via-[#5e3a5f] to-[#392741]" />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 md:px-12 lg:px-40">
-        <h2 className="text-2xl uppercase tracking-widest text-[#F6C871] mb-2 text-center md:text-left">
+        <h2 className="text-2xl uppercase tracking-widest text-[#F6C871] mb-2 md:text-left">
           Proyectos
         </h2>
-        <p className="italic text-sm text-white/70 mb-10 text-center md:text-left">
+        <p className="italic text-sm text-white/70 mb-10 md:text-left">
           Algunos de los desarrollos más representativos.
         </p>
 
@@ -132,10 +107,10 @@ export default function Projects() {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="relative bg-[#ffffff0a] p-5 rounded-xl shadow-md hover:shadow-lg transition flex flex-col justify-between"
               ref={(el) => {
                 dropdownRefs.current[idx] = el;
               }}
+              className="relative bg-[#ffffff0a] p-5 rounded-xl shadow-sm transition-all duration-500 ease-out transform hover:-translate-y-[2px] hover:scale-[1.01] hover:bg-white/10 flex flex-col justify-between"
             >
               {project.screenshots && project.screenshots[0] ? (
                 <img

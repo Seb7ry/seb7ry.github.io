@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import profileImg from '../assets/images/profile.png';
 import clsx from 'clsx';
 
-const SECTIONS = ['inicio', 'sobremi', 'experiencia', 'proyectos', 'certificaciones', 'contacto'];
+const SECTIONS = ['inicio', 'sobremi', 'experiencia', 'proyectos', 'certificaciones'];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +24,8 @@ export default function Navbar() {
         });
       },
       {
-        threshold: 0.1, // Más sensible que 0.1
-        rootMargin: '-60px 0px -40% 0px', // Considera altura del navbar
+        threshold: 0.1, 
+        rootMargin: '-60px 0px -40% 0px', 
       }
     );
   
@@ -64,7 +63,7 @@ export default function Navbar() {
 
       <nav
         className={clsx(
-          'fixed top-0 left-0 w-full z-50 backdrop-blur-sm transition-all duration-300',
+          'fixed top-0 left-0 w-screen z-50 backdrop-blur-sm transition-all duration-300',
           scrolled ? 'bg-[#1B1D2A]/40 shadow-lg' : 'bg-[#1B1D2A]/40'
         )}
       >
@@ -72,7 +71,7 @@ export default function Navbar() {
           {/* Perfil */}
           <div className="flex items-center space-x-3">
             <img
-              src={profileImg}
+              src="/assets/images/profile.jpg"
               alt="Foto de perfil"
               className="w-10 h-10 rounded-full object-cover"
             />
@@ -116,7 +115,7 @@ export default function Navbar() {
         {/* Menú móvil */}
         <div
           className={clsx(
-            'md:hidden absolute left-0 w-full z-40 overflow-hidden transition-all duration-300',
+            'md:hidden absolute left-0 w-screen z-40 overflow-hidden transition-all duration-300',
             'bg-[#1B1D2A]/40',
             isOpen ? 'max-h-96 py-4' : 'max-h-0 py-0'
           )}
