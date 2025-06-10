@@ -1,5 +1,4 @@
 import { FaGithub, FaLinkedin, FaNodeJs, FaReact, FaJava, FaGitAlt, FaWhatsapp } from 'react-icons/fa';
-import { FaFlutter } from 'react-icons/fa6';
 import { HiOutlineDocumentArrowDown } from 'react-icons/hi2';
 import {
   SiJavascript,
