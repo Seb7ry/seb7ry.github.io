@@ -111,9 +111,6 @@ export default function Hero() {
             <SiSpring className="text-green-500" /> Spring Boot
           </span>
           <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
-            <FaFlutter className="text-sky-400" /> Flutter
-          </span>
-          <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
             <SiDocker className="text-blue-400" /> Docker
           </span>
           <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full">
